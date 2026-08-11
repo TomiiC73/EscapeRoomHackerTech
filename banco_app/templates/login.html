@@ -89,25 +89,10 @@
   <div class="glow w-[520px] h-[520px] bg-gold/15 -top-40 -left-20"></div>
   <div class="glow w-[420px] h-[420px] bg-gold/10 bottom-0 right-0"></div>
 
-  <div class="relative w-full max-w-6xl grid lg:grid-cols-2 gap-14 items-center">
+  <div class="relative w-full max-w-md mx-auto">
 
-    <!-- Panel izquierdo: statement de marca -->
-    <div id="login-copy" class="hidden lg:block">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs tracking-[0.2em] uppercase text-white/60 mb-8">
-        <span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
-        Acceso seguro
-      </div>
-      <h1 class="text-5xl font-extrabold leading-[1.05] tracking-tight mb-6">
-        Tu banco,<br><span class="text-gradient-gold">tu segundo factor.</span>
-      </h1>
-      <p class="text-white/50 text-lg leading-relaxed max-w-md">
-        Ingresá con tu contraseña y confirmá tu identidad con una
-        verificación facial en dos pasos.
-      </p>
-    </div>
-
-    <!-- Panel derecho: formulario -->
-    <div id="login-card" class="glass rounded-3xl p-8 sm:p-10 w-full max-w-md mx-auto lg:mx-0">
+    <!-- Formulario -->
+    <div id="login-card" class="glass rounded-3xl p-8 sm:p-10 w-full mx-auto">
       <div class="text-2xl font-bold mb-2">Ingresar a tu cuenta</div>
       <div class="text-white/45 text-sm mb-7">Ingresá con tu contraseña; luego te pedimos verificación facial.</div>
 
@@ -132,8 +117,7 @@
 </div>
 
 <script>
-  gsap.from('#login-copy', { opacity: 0, x: -40, duration: 0.9, ease: 'power3.out' });
-  gsap.from('#login-card', { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out', delay: 0.15 });
+  gsap.from('#login-card', { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out' });
 </script>
 <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>

@@ -95,7 +95,7 @@
         cameraFrame.style.display = "none";
         faceIntro.style.display = "none";
         bombResult.style.display = "flex";
-        statusLine.textContent = `Rostro verificado (score ${data.score}).`;
+        statusLine.textContent = "Rostro verificado.";
         statusLine.className = "status-line success";
         return;
       }
