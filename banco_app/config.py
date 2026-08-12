@@ -4,6 +4,10 @@ Configuracion centralizada de HackerBank.
 """
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 FLASK_SECRET_KEY = os.environ.get("HACKERBANK_SECRET") or "lab-only-insecure-secret-hackertech-utn-frc"
 
 DATABASE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hackerbank.db")
@@ -29,8 +33,8 @@ BANK_BRANCH_LABEL = "Sucursal Centro — Córdoba (031)"
 ACCOUNT_TYPE_LABEL = "Caja de ahorro en pesos"
 BANK_BIC = "HKBKARBA"            # codigo BIC/SWIFT ficticio
 
-DEMO_USER_EMAIL = "dev+ht"
-DEMO_USER_PASSWORD = "2NEfv7M3+hlE"
+DEMO_USER_EMAIL = os.environ.get("DEMO_USER_EMAIL") or "dev+ht"
+DEMO_USER_PASSWORD = os.environ.get("DEMO_USER_PASSWORD") or "2NEfv7M3+hlE"
 DEMO_USER_NAME = "Sr. Vargas"
 DEMO_USER_DNI = "30.456.789"
 DEMO_USER_CBU = "0000003100012345678901"

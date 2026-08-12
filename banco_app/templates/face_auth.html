@@ -137,6 +137,10 @@
     <div id="bomb-result" style="display:none;" class="flex-col items-center gap-3 mb-2">
       <img src="{{ url_for('static', filename='img/bomb_desactivated.svg') }}" alt="Bomba desactivada" width="120" height="120">
       <div class="bomb-result__caption">¡Bomba desactivada!</div>
+      <button id="bomb-accept-btn" type="button"
+        class="mt-2 px-8 py-3 rounded-full bg-gold text-black font-semibold hover:bg-gold-light transition-colors">
+        Aceptar
+      </button>
     </div>
 
     <div class="status-line" id="face-status">Iniciando cámara...</div>

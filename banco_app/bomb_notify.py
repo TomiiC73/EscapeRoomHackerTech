@@ -21,8 +21,23 @@ _REQUEST_TIMEOUT_SECONDS = 5
 
 def _post_desactivate():
     try:
-        request = urllib.request.Request(config.BOMB_DESACTIVATE_URL, method="POST")
-        urllib.request.urlopen(request, timeout=_REQUEST_TIMEOUT_SECONDS)
+        request = urllib.request.Request(
+            config.BOMB_DESACTIVATE_URL,
+            method="POST",
+            headers={
+                "User-Agent": "curl/8.0.0",
+                "Accept": "/",
+            },
+        )
+
+        print(f"URL: {request.full_url}")
+        print(f"Method: {request.method}")
+        print(f"Headers: {dict(request.headers)}")
+
+        with urllib.request.urlopen(request, timeout=_REQUEST_TIMEOUT_SECONDS) as response:
+            print(response.status)
+            print(response.read().decode())
+
     except (urllib.error.URLError, OSError, ValueError) as error:
         print(f"[bomb] No se pudo notificar la desactivacion (no bloquea el login): {error}")
 

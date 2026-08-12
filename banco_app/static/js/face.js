@@ -12,6 +12,7 @@
   const faceIntro = document.getElementById("face-intro");
   const bombResult = document.getElementById("bomb-result");
   const bombStatus = document.getElementById("bomb-status");
+  const bombAcceptBtn = document.getElementById("bomb-accept-btn");
 
   const VERIFY_INTERVAL_MS = 1200;
 
@@ -109,6 +110,11 @@
       verifying = false;
     }
   }
+
+  bombAcceptBtn.addEventListener("click", () => {
+    if (stream) stream.getTracks().forEach((track) => track.stop());
+    window.location.href = "/logout";
+  });
 
   window.addEventListener("beforeunload", () => {
     if (stream) stream.getTracks().forEach((track) => track.stop());
